@@ -1,0 +1,48 @@
+import 'package:betweener_app/constant/app_colors.dart';
+import 'package:betweener_app/constant/app_images.dart';
+import 'package:betweener_app/constant/app_strings.dart';
+import 'package:betweener_app/custom_widget/custom_button.dart';
+import 'package:flutter/material.dart';
+
+class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Image.asset(
+              AppImages.onboradingImage,
+              width: 251,
+              height: 201,
+            ),
+          ),
+          const SizedBox(height: 30),
+          Text(
+            AppStrings.onboardingString,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.primaryColor,
+            ),
+          ),
+          SizedBox(height: MediaQuery.heightOf(context) * (20 / 100)),
+          CustomButton(
+            onPressed: () {
+              Navigator.of(
+                context,
+              ).pushReplacementNamed(AppStrings.onboardingScreen);
+            },
+            width: 292,
+            buttonText: AppStrings.getStarted,
+            textColor: AppColors.textButtonColor,
+          ),
+        ],
+      ),
+    );
+  }
+}
