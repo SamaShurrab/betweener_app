@@ -5,6 +5,7 @@ import 'package:betweener_app/custom_widget/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatelessWidget {
+  static const id = "/OnboardingScreen";
   const OnboardingScreen({super.key});
 
   @override
@@ -33,9 +34,7 @@ class OnboardingScreen extends StatelessWidget {
           SizedBox(height: MediaQuery.heightOf(context) * (20 / 100)),
           CustomButton(
             onPressed: () {
-              Navigator.of(
-                context,
-              ).pushReplacementNamed(AppStrings.onboardingScreen);
+              Navigator.of(context).pushReplacementNamed(id);
             },
             width: 292,
             buttonText: AppStrings.getStarted,

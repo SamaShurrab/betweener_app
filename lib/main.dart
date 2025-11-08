@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const OnboardingScreen(),
       routes: {
-        AppStrings.onboardingScreen: (context) => const OnboardingScreen(),
-        AppStrings.registerScreen: (context) => const RegisterScreen(),
+        OnboardingScreen.id: (context) => const OnboardingScreen(),
+        RegisterScreen.id: (context) => const RegisterScreen(),
       },
     );
   }
