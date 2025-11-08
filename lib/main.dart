@@ -1,4 +1,4 @@
-import 'package:betweener_app/constant/app_strings.dart';
+import 'package:betweener_app/screens/login_screen.dart';
 import 'package:betweener_app/screens/onboarding_screen.dart';
 import 'package:betweener_app/screens/register_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         OnboardingScreen.id: (context) => const OnboardingScreen(),
         RegisterScreen.id: (context) => const RegisterScreen(),
+        LoginScreen.id: (context) => const LoginScreen(),
       },
     );
   }
