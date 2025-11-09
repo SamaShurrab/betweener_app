@@ -6,6 +6,7 @@ import 'package:betweener_app/custom_widget/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 class EditLinkScreen extends StatelessWidget {
+  static const id = "/EditLinkScreen";
   const EditLinkScreen({super.key});
 
   @override
