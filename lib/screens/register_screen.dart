@@ -19,11 +19,7 @@ class RegisterScreen extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          icon: Icon(
-            Icons.arrow_back_ios_new_rounded,
-            color: AppColors.primaryColor,
-            size: 32,
-          ),
+          icon: Icon(Icons.arrow_back_ios_new_rounded),
         ),
       ),
       body: SingleChildScrollView(
@@ -76,7 +72,6 @@ class RegisterScreen extends StatelessWidget {
                       background: AppColors.secondaryColor,
                       buttonText: AppStrings.register,
                       textColor: AppColors.textButtonColor,
-                      width: double.infinity,
                       onPressed: () {},
                     ),
                   ],
@@ -100,7 +95,6 @@ class RegisterScreen extends StatelessWidget {
                 background: Colors.white,
                 buttonText: AppStrings.loginInGoogle,
                 textColor: AppColors.googleButtonColor,
-                width: double.infinity,
                 onPressed: () {},
               ),
             ],

@@ -1,10 +1,8 @@
-import 'package:betweener_app/constant/app_colors.dart';
 import 'package:betweener_app/constant/app_images.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String buttonText;
-  final double width;
   final Color textColor;
   final void Function()? onPressed;
   final Color background;
@@ -14,7 +12,6 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.buttonText,
     required this.textColor,
-    required this.width,
     required this.onPressed,
     required this.background,
     required this.borderColor,
@@ -25,7 +22,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
-      width: width,
+      width: double.infinity,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
