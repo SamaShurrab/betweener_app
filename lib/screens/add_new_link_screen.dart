@@ -53,7 +53,7 @@ class AddNewLinkScreen extends StatelessWidget {
                 obscureText: false,
                 textInputAction: TextInputAction.done,
               ),
-              SizedBox(height: MediaQuery.heightOf(context) * (10 / 100)),
+              SizedBox(height: MediaQuery.heightOf(context) * (5 / 100)),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 68),
                 child: CustomButton(

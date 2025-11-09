@@ -36,4 +36,9 @@ class AppStrings {
   // Edit Link Screen
   static String edit = "Edit Link";
   static String save = "SAVE";
+
+  // Edit Uesr Info Screen
+  static String editUserInfo = "Edit User Info";
+  static String phone = "phone";
+  static String changePhoto = "Change Photo";
 }
