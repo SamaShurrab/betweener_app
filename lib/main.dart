@@ -1,5 +1,6 @@
 import 'package:betweener_app/constant/app_colors.dart';
 import 'package:betweener_app/screens/active_sharing_screen.dart';
+import 'package:betweener_app/screens/add_new_link_screen.dart';
 import 'package:betweener_app/screens/home_screen.dart';
 import 'package:betweener_app/screens/login_screen.dart';
 import 'package:betweener_app/screens/main_screen.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         ActiveSharingScreen.id: (context) => ActiveSharingScreen(),
         ProfileScreen.id: (context) => ProfileScreen(),
         MainScreen.id: (context) => MainScreen(),
+        AddNewLinkScreen.id: (context) => AddNewLinkScreen(),
       },
     );
   }

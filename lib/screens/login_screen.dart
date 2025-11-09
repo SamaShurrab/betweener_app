@@ -4,7 +4,6 @@ import 'package:betweener_app/constant/app_strings.dart';
 import 'package:betweener_app/custom_widget/custom_button.dart';
 import 'package:betweener_app/custom_widget/custom_label.dart';
 import 'package:betweener_app/custom_widget/custom_text_form_field.dart';
-import 'package:betweener_app/screens/home_screen.dart';
 import 'package:betweener_app/screens/main_screen.dart';
 import 'package:betweener_app/screens/register_screen.dart';
 import 'package:flutter/material.dart';

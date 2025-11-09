@@ -1,3 +1,5 @@
+import 'package:betweener_app/constant/app_colors.dart';
+import 'package:betweener_app/constant/app_strings.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -6,6 +8,18 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          AppStrings.profile,
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w600,
+            color: AppColors.primaryColor,
+          ),
+        ),
+        centerTitle: true,
+      ),
+    );
   }
 }

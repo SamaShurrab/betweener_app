@@ -17,5 +17,23 @@ class AppStrings {
 
   //  Home Screen
   static String hello = "Hello,";
-  static String addLink="Add Link";
+  static String addLink = "Add Link";
+
+  // ActiveSharing Screen
+  static String activeSharing = "Active Sharing";
+
+  // Profile Screen
+  static String profile = "Profile";
+
+  // Add New Link Screen
+  static String addNewLink = "Add Link";
+  static String title = "title";
+  static String link = "link";
+  static String titleHint = "Snapchat";
+  static String linkHint = "http:\\www.Example.com";
+  static String add = "ADD";
+
+  // Edit Link Screen
+  static String edit = "Edit Link";
+  static String save = "SAVE";
 }
