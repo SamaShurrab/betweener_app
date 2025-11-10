@@ -1,16 +1,41 @@
 import 'package:betweener_app/core/utils/app_colors.dart';
 import 'package:betweener_app/core/utils/app_images.dart';
 import 'package:betweener_app/core/utils/app_strings.dart';
+import 'package:betweener_app/view/main_screen.dart';
 import 'package:betweener_app/view/widgets/custom_button.dart';
 import 'package:betweener_app/view/widgets/custom_label.dart';
 import 'package:betweener_app/view/widgets/custom_text_form_field.dart';
-import 'package:betweener_app/view/main_screen.dart';
 import 'package:betweener_app/view/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   static const id = "/LoginScreen";
+
   const LoginScreen({super.key});
+  @override
+  State<StatefulWidget> createState() {
+    return LoginScreenState();
+  }
+}
+
+class LoginScreenState extends State<LoginScreen> {
+  static GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  static TextEditingController emailController = TextEditingController();
+  static TextEditingController passwordController = TextEditingController();
+  bool isVisible = true;
+
+  void submitLogin() {
+    if (formKey.currentState!.validate()) {
+      Navigator.of(context).pushReplacementNamed(MainScreen.id);
+    }
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +55,15 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 60),
               Form(
+                key: formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomLabel(labelName: AppStrings.email),
                     const SizedBox(height: 10),
                     CustomTextFormField(
+                      labelName: AppStrings.email,
+                      controller: emailController,
                       textInputAction: TextInputAction.next,
                       obscureText: false,
                       hint: AppStrings.hintEmail,
@@ -45,8 +73,15 @@ class LoginScreen extends StatelessWidget {
                     CustomLabel(labelName: AppStrings.password),
                     const SizedBox(height: 10),
                     CustomTextFormField(
+                      labelName: AppStrings.password,
+                      onPressed: () {
+                        setState(() {
+                          isVisible = !isVisible;
+                        });
+                      },
+                      controller: passwordController,
                       textInputAction: TextInputAction.done,
-                      obscureText: true,
+                      obscureText: isVisible,
                       hint: AppStrings.hintPassword,
                       keyboardType: TextInputType.text,
                     ),
@@ -58,9 +93,7 @@ class LoginScreen extends StatelessWidget {
                       buttonText: AppStrings.login,
                       textColor: AppColors.textButtonColor,
                       onPressed: () {
-                        Navigator.of(
-                          context,
-                        ).pushReplacementNamed(MainScreen.id);
+                        submitLogin();
                       },
                     ),
                     const SizedBox(height: 30),

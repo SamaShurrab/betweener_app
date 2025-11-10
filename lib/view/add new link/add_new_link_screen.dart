@@ -5,9 +5,30 @@ import 'package:betweener_app/view/widgets/custom_label.dart';
 import 'package:betweener_app/view/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-class AddNewLinkScreen extends StatelessWidget {
+class AddNewLinkScreen extends StatefulWidget {
   static const id = "/AddNewLinkScreen";
   const AddNewLinkScreen({super.key});
+
+  @override
+  State<StatefulWidget> createState() {
+    return AddNewLinkScreenState();
+  }
+}
+
+class AddNewLinkScreenState extends State<AddNewLinkScreen> {
+  static GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  static TextEditingController linkController = TextEditingController();
+  static TextEditingController titleController = TextEditingController();
+  @override
+  void dispose() {
+    linkController.dispose();
+    titleController.dispose();
+    super.dispose();
+  }
+
+  submitAddLink() {
+    if (formKey.currentState!.validate()) {}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +51,7 @@ class AddNewLinkScreen extends StatelessWidget {
         ),
       ),
       body: Form(
+        key: formKey,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 43),
           child: Column(
@@ -39,6 +61,8 @@ class AddNewLinkScreen extends StatelessWidget {
               CustomLabel(labelName: AppStrings.title),
               const SizedBox(height: 10),
               CustomTextFormField(
+                labelName: AppStrings.title,
+                controller: titleController,
                 hint: AppStrings.titleHint,
                 keyboardType: TextInputType.text,
                 obscureText: false,
@@ -48,6 +72,8 @@ class AddNewLinkScreen extends StatelessWidget {
               CustomLabel(labelName: AppStrings.link),
               const SizedBox(height: 10),
               CustomTextFormField(
+                labelName: AppStrings.link,
+                controller: linkController,
                 hint: AppStrings.linkHint,
                 keyboardType: TextInputType.url,
                 obscureText: false,
@@ -59,7 +85,9 @@ class AddNewLinkScreen extends StatelessWidget {
                 child: CustomButton(
                   buttonText: AppStrings.add,
                   textColor: AppColors.textButtonColor,
-                  onPressed: () {},
+                  onPressed: () {
+                    submitAddLink();
+                  },
                   background: AppColors.secondaryColor,
                   borderColor: AppColors.secondaryColor,
                   isLoginGoogle: false,

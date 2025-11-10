@@ -14,6 +14,13 @@ class AppStrings {
   static String or = "or";
   static String loginInGoogle = "SIGN IN WITH GOOGLE";
   static String login = "LOGIN";
+  static String emptyField = "* Field required .";
+  static String nameError = "* Invalid name - only letters allowed .";
+  static String invalidEmail = "* Invalid email - must contain @ and .";
+  static String invaildPasswors =
+      "* Use upper, lower, number, symbol, min 8 chars .";
+  static String invalidUrl = "* Invalid URL";
+  static String invalidPhone = "* Invalid phone number - must be 10 digits";
 
   //  Home Screen
   static String hello = "Hello,";

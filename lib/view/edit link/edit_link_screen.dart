@@ -5,10 +5,20 @@ import 'package:betweener_app/view/widgets/custom_label.dart';
 import 'package:betweener_app/view/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-class EditLinkScreen extends StatelessWidget {
+class EditLinkScreen extends StatefulWidget {
   static const id = "/EditLinkScreen";
   const EditLinkScreen({super.key});
 
+  @override
+  State<StatefulWidget> createState() {
+    return EditLinkScreenState();
+  }
+}
+
+class EditLinkScreenState extends State<EditLinkScreen> {
+  static GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  static TextEditingController linkController = TextEditingController();
+  static TextEditingController titleController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +40,7 @@ class EditLinkScreen extends StatelessWidget {
         ),
       ),
       body: Form(
+        key: formKey,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 43),
           child: Column(
@@ -39,6 +50,8 @@ class EditLinkScreen extends StatelessWidget {
               CustomLabel(labelName: AppStrings.title),
               const SizedBox(height: 10),
               CustomTextFormField(
+                labelName: AppStrings.title,
+                controller: titleController,
                 hint: "",
                 keyboardType: TextInputType.text,
                 obscureText: false,
@@ -48,6 +61,8 @@ class EditLinkScreen extends StatelessWidget {
               CustomLabel(labelName: AppStrings.link),
               const SizedBox(height: 10),
               CustomTextFormField(
+                labelName: AppStrings.link,
+                controller: linkController,
                 hint: "",
                 keyboardType: TextInputType.url,
                 obscureText: false,

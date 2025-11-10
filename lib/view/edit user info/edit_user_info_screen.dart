@@ -5,9 +5,35 @@ import 'package:betweener_app/view/widgets/custom_label.dart';
 import 'package:betweener_app/view/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-class EditUserInfoScreen extends StatelessWidget {
+class EditUserInfoScreen extends StatefulWidget {
   static const id = "/EditUserInfoScreen";
   const EditUserInfoScreen({super.key});
+
+  @override
+  State<StatefulWidget> createState() {
+    return EditUserInfoScreenState();
+  }
+}
+
+class EditUserInfoScreenState extends State<EditUserInfoScreen> {
+  static GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  static TextEditingController emailController = TextEditingController();
+  static TextEditingController phoneController = TextEditingController();
+  static TextEditingController nameController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    phoneController.dispose();
+    nameController.dispose();
+    super.dispose();
+  }
+
+  submitSave() {
+    if (formKey.currentState!.validate()) {
+      Navigator.of(context).pop();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,12 +90,15 @@ class EditUserInfoScreen extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               Form(
+                key: formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomLabel(labelName: AppStrings.name.toLowerCase()),
                     const SizedBox(height: 10),
                     CustomTextFormField(
+                      labelName: AppStrings.name,
+                      controller: nameController,
                       hint: "",
                       keyboardType: TextInputType.text,
                       obscureText: false,
@@ -79,6 +108,8 @@ class EditUserInfoScreen extends StatelessWidget {
                     CustomLabel(labelName: AppStrings.email.toLowerCase()),
                     const SizedBox(height: 10),
                     CustomTextFormField(
+                      labelName: AppStrings.email,
+                      controller: emailController,
                       hint: "",
                       keyboardType: TextInputType.emailAddress,
                       obscureText: false,
@@ -88,6 +119,8 @@ class EditUserInfoScreen extends StatelessWidget {
                     CustomLabel(labelName: AppStrings.phone.toLowerCase()),
                     const SizedBox(height: 10),
                     CustomTextFormField(
+                      labelName: AppStrings.phone,
+                      controller: phoneController,
                       hint: "",
                       keyboardType: TextInputType.phone,
                       obscureText: false,
@@ -100,7 +133,9 @@ class EditUserInfoScreen extends StatelessWidget {
                       child: CustomButton(
                         buttonText: AppStrings.save,
                         textColor: AppColors.textButtonColor,
-                        onPressed: () {},
+                        onPressed: () {
+                          submitSave();
+                        },
                         background: AppColors.secondaryColor,
                         borderColor: AppColors.secondaryColor,
                         isLoginGoogle: false,
