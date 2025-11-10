@@ -24,6 +24,8 @@ class AppStrings {
 
   // Profile Screen
   static String profile = "Profile";
+  static String followers = "followers";
+  static String following = "following";
 
   // Add New Link Screen
   static String addNewLink = "Add Link";

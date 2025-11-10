@@ -1,11 +1,11 @@
-import 'package:betweener_app/constant/app_colors.dart';
-import 'package:betweener_app/constant/app_images.dart';
-import 'package:betweener_app/constant/app_strings.dart';
-import 'package:betweener_app/custom_widget/custom_button.dart';
-import 'package:betweener_app/custom_widget/custom_label.dart';
-import 'package:betweener_app/custom_widget/custom_text_form_field.dart';
-import 'package:betweener_app/screens/main_screen.dart';
-import 'package:betweener_app/screens/register_screen.dart';
+import 'package:betweener_app/core/utils/app_colors.dart';
+import 'package:betweener_app/core/utils/app_images.dart';
+import 'package:betweener_app/core/utils/app_strings.dart';
+import 'package:betweener_app/view/widgets/custom_button.dart';
+import 'package:betweener_app/view/widgets/custom_label.dart';
+import 'package:betweener_app/view/widgets/custom_text_form_field.dart';
+import 'package:betweener_app/view/main_screen.dart';
+import 'package:betweener_app/view/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {

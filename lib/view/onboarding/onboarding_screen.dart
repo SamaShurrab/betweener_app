@@ -1,8 +1,8 @@
-import 'package:betweener_app/constant/app_colors.dart';
-import 'package:betweener_app/constant/app_images.dart';
-import 'package:betweener_app/constant/app_strings.dart';
-import 'package:betweener_app/custom_widget/custom_button.dart';
-import 'package:betweener_app/screens/login_screen.dart';
+import 'package:betweener_app/core/utils/app_colors.dart';
+import 'package:betweener_app/core/utils/app_images.dart';
+import 'package:betweener_app/core/utils/app_strings.dart';
+import 'package:betweener_app/view/widgets/custom_button.dart';
+import 'package:betweener_app/view/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatelessWidget {

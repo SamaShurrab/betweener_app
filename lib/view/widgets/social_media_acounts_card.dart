@@ -1,5 +1,5 @@
-import 'package:betweener_app/constant/app_colors.dart';
-import 'package:betweener_app/constant/collections.dart';
+import 'package:betweener_app/core/utils/app_colors.dart';
+import 'package:betweener_app/core/utils/collections.dart';
 import 'package:flutter/material.dart';
 
 class SocialMediaAcountsCard extends StatelessWidget {

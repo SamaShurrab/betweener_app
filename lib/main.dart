@@ -1,14 +1,14 @@
-import 'package:betweener_app/constant/app_colors.dart';
-import 'package:betweener_app/screens/active_sharing_screen.dart';
-import 'package:betweener_app/screens/add_new_link_screen.dart';
-import 'package:betweener_app/screens/edit_link_screen.dart';
-import 'package:betweener_app/screens/edit_user_info_screen.dart';
-import 'package:betweener_app/screens/home_screen.dart';
-import 'package:betweener_app/screens/login_screen.dart';
-import 'package:betweener_app/screens/main_screen.dart';
-import 'package:betweener_app/screens/onboarding_screen.dart';
-import 'package:betweener_app/screens/profile_screen.dart';
-import 'package:betweener_app/screens/register_screen.dart';
+import 'package:betweener_app/core/utils/app_colors.dart';
+import 'package:betweener_app/view/active%20sharing/active_sharing_screen.dart';
+import 'package:betweener_app/view/add%20new%20link/add_new_link_screen.dart';
+import 'package:betweener_app/view/edit%20link/edit_link_screen.dart';
+import 'package:betweener_app/view/edit%20user%20info/edit_user_info_screen.dart';
+import 'package:betweener_app/view/home/home_screen.dart';
+import 'package:betweener_app/view/auth/login_screen.dart';
+import 'package:betweener_app/view/main_screen.dart';
+import 'package:betweener_app/view/onboarding/onboarding_screen.dart';
+import 'package:betweener_app/view/profile/profile_screen.dart';
+import 'package:betweener_app/view/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

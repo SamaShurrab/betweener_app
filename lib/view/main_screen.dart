@@ -1,8 +1,8 @@
-import 'package:betweener_app/constant/app_colors.dart';
-import 'package:betweener_app/constant/app_images.dart';
-import 'package:betweener_app/screens/active_sharing_screen.dart';
-import 'package:betweener_app/screens/home_screen.dart';
-import 'package:betweener_app/screens/profile_screen.dart';
+import 'package:betweener_app/core/utils/app_colors.dart';
+import 'package:betweener_app/core/utils/app_images.dart';
+import 'package:betweener_app/view/active%20sharing/active_sharing_screen.dart';
+import 'package:betweener_app/view/home/home_screen.dart';
+import 'package:betweener_app/view/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
